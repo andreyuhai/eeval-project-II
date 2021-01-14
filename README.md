@@ -37,4 +37,4 @@ Then simply do `python animation.py` which will render the animation.
 
 Algorithm shown in the video/gif is taken from the book Knowledge Discovery with Support Vector Machines by Lutz Hamel.
 
-Animated by using the library `[ManimCommunity/manim](https://github.com/ManimCommunity/manim)`
+Animated by using the library [`ManimCommunity/manim`](https://github.com/ManimCommunity/manim)
