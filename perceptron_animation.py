@@ -2,7 +2,7 @@ from manim import *
 import numpy as np
 
 # config['quality']='low_quality'
-config['save_as_gif'] = True
+# config['save_as_gif'] = True
 
 # NumberPlane configuration
 plane_config = dict(
@@ -31,7 +31,7 @@ plane_config = dict(
             }  
         )
 
-class Foo(Scene):
+class PerceptronAnimation(Scene):
     def __init__(self,
                  x_pos,
                  y_pos,
@@ -218,24 +218,3 @@ class Foo(Scene):
             if np.any(self.weights):
                 self.decision_boundary = Line(self.np.c2p(self.np.x_min,  f(self.np.x_min), 0), self.np.c2p(self.np.x_max, f(self.np.x_max), 0))
                 self.play(ShowCreation(self.decision_boundary))
-
-# Create the training samples
-N = 6
-x = np.array([[1, 2, 0],
-    [3, 3, 0],
-    [1.5, -2, 0],
-    [-1, -2, 0],
-    [-2, -1, 0],
-    [-3, -1.5, 0]])
-
-y = np.ones((6,1))
-y[3:, :] *= -1
-
-x_pos = x[0:N//2, :]
-y_pos = y[0:N//2, :]
-
-x_neg = x[N//2:, :]
-y_neg = y[N//2:, :]
-
-foo = Foo(x_pos, y_pos, x_neg, y_neg)
-foo.render()
